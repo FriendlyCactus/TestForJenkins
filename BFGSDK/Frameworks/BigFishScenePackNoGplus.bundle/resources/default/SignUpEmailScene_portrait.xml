@@ -1,0 +1,97 @@
+<scene>
+    <view size="fullscreen">
+	<view frame="{{15,15},{@-30,@-30}}" class="create-password-scene" autoresizingMask="width height" layout="center vertical" backgroundColor="white">
+
+    <view size="{100%,43}">
+        <imageview frame="{{0,0},{100%,100%}}" image="Images/blue_title"/>
+        <button frame="{{10,9},{32,24}}" onTap="handleBack" image="Images/Buttons/back_button" id="back-button"/>
+        <imageview frame="{{7,5},{32,32}}" image="Images/fish_icon" id="scene-icon" hidden="true"/>
+        <label frame="{{51,11},{250,22}}" text="Create a Big Fish Account" textColor="white" font="Ed-Gothic 18" textAlignment="left"/>
+        <button frame="{{@-41,1},{40,40}}" onTap="dismiss" backgroundImage="Images/Buttons/close_button" id="close-button"/>
+    </view>
+
+    <view size="{@-50,100%}" layout="center vertical">
+
+        <view size="{100%,15}" /> <!-- Spacer -->
+
+        <view size="{100%,55}">
+            <view frame="{{0,0},{100%,55}}" id="signup-email-warning" hidden="true">
+                <imageview frame="{{0,2},{20,20}}" image="Images/caution" />
+                <label frame="{{23,0},{100%,25}}" text="Email" class="header-warning-text" />
+                <imageview frame="{{0,25},{@-5,30}}" image="Images/text_box_error"/>
+            </view>
+            <label frame="{{0,0},{100%,25}}" text="Email" class="header-text" id="signup-email-label"/>
+            <imageview frame="{{0,25},{@-5,30}}" image="Images/text_box" id="signup-email-bg"/>
+            <textfield frame="{{6,25},{@-12,30}}" placeholder="Email address (e.g. joe@aol.com)" borderStyle='none' class="signup-textfield" id="signup-email-field" autoresizingMask="width" keyboardType="email-address" autocapitalizationType="none"/>
+        </view>
+
+        <view size="{100%,55}">
+            <view frame="{{0,0},{100%,55}}" id="signup-password-warning" hidden="true">
+                <imageview frame="{{0,2},{20,20}}" image="Images/caution" />
+                <label frame="{{23,0},{100%,25}}" text="Password" class="header-warning-text" />
+                <imageview frame="{{0,25},{@-5,30}}" image="Images/text_box_error"/>
+            </view>
+            <label frame="{{0,0},{100%,25}}" text="Password" class="header-text" id="signup-password-label"/>
+            <imageview frame="{{0,25},{@-5,30}}" image="Images/text_box" id="signup-password-bg"/>
+            <textfield frame="{{6,25},{@-12,30}}" placeholder="Password (5-12 characters)" borderStyle='none' class="signup-textfield" id="signup-password-field" autoresizingMask="width" autocapitalizationType="none" secureTextEntry="true"/>
+        </view>
+
+        <view size="{100%,300}">
+            <!-- Normal appearance -->
+            <view frame="{{0,0},{100%, 100%}}" layout="center vertical" id="normal-appearance" hidden="false">
+                <view size="{100%, 15}" />
+
+                <button size="{170,30}" id="signup-button" title="Create Account" onTap="continueSignUp"/>
+
+                <htmllabel size="{90%,40}" onTap="handleSignIn" lineBreakMode="word-wrap" numberOfLines="2" text="RSAlreadyHaveAccount" textAlignment="center" id="signin-button" />
+
+                <htmllabel size="{90%,100}" numberOfLines="6" textAlignment="center" lineBreakMode="word-wrap" text="RSPrivacyCreateAccount" class="caption-text" id="privacy-statement" />
+            </view>
+            <!-- Coppa appearance -->
+            <view frame="{{0,0},{100%, 100%}}" layout="center vertical" id="coppa-appearance" hidden="true">
+                <view size="{100%, 10}" />
+                <view size="{100%, 55}" layout="center vertical">
+                    <label size="{90%, 25}" text="Select your birth year" class="header-text" textAlignment="center"/>
+                    <view size="{54,30}">
+                        <imageview size="{54,30}" image="Images/small_frame"/>
+                        <label frame="{{6,0},{@-13,30}}" textAlignment="center" text="2015"
+                            onTap="selectBirthYear" class="signup-textfield" id="signup-birthday-label" autoresizingMask="width" />
+                    </view>
+                </view>
+               
+                <view size="{100%, 10}" />
+
+                <button size="{170,30}" id="signup-button" title="Create Account" onTap="continueSignUp" backgroundImage="Images/Buttons/blue_button.png" />
+                
+                <view size="{100%, 5}" />
+                
+                <htmllabel size="{90%,48}" onTap="handleSignIn" lineBreakMode="word-wrap" numberOfLines="2" text="RSAlreadyHaveAccount" textAlignment="center" id="signin-button" />
+                
+                <htmllabel size="{90%,100}" numberOfLines="6" textAlignment="center" lineBreakMode="word-wrap" text="RSPrivacyCreateAccount" class="caption-text" id="privacy-statement" />
+            </view>
+            <!-- Newsletter appearance -->
+            <view frame="{{0,0},{100%, 100%}}" layout="center vertical" id="newsletter-appearance" hidden="true">
+                <view size="{100%, 55}" layout="center horizontal 5">
+                    <view size="{30,30}">
+                        <imageview size="{30, 30}" image="Images/Buttons/unchecked.png" id="newsletter-checkbox-off" onTap="toggleNewsletter"/>
+                        <imageview size="{30, 30}" image="Images/Buttons/checked.png" id="newsletter-checkbox-on" onTap="toggleNewsletter" hidden="true"/>
+                    </view>
+                    <label size="{@-40, 55}" text="RSNewsletterOffer" class="header-text" numberOfLines="3" lineBreakMode="word-wrap"/>
+                </view>
+                
+                <view size="{100%, 10}" />
+                
+                <button size="{170,30}" id="signup-button" title="Create Account" onTap="continueSignUp" backgroundImage="Images/Buttons/blue_button.png" />
+                
+                <view size="{100%, 15}" />
+                
+                <htmllabel size="{90%,48}" onTap="handleSignIn" lineBreakMode="word-wrap" numberOfLines="2" text="RSAlreadyHaveAccount" textAlignment="center" id="signin-button" />
+                
+                <htmllabel size="{90%,100}" numberOfLines="6" textAlignment="center" lineBreakMode="word-wrap" text="RSPrivacyCreateAccount" class="caption-text" id="privacy-statement" />
+            </view>
+        </view>
+    </view>
+
+    </view>
+    </view>
+</scene>

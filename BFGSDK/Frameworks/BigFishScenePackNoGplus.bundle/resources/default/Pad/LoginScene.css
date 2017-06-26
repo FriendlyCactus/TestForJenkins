@@ -1,0 +1,135 @@
+#header-text
+{
+    font-family: "Ed-Gothic";
+    font-size: 21px;
+    color: #FFFFFF;
+}
+
+.header-warning-text
+{
+    font-family: "Arial";
+    font-size: 17px;
+    color: #ff0000;
+}
+
+.subheader-text
+{
+    font-family: "Arial";
+    font-size: 17px;
+    color: #000000;
+}
+
+.caption-text
+{
+    font-size: 14px;
+    color: #000000;
+}
+
+.link-text
+{
+    font-size: 16px;
+    color: #3366BB;
+}
+
+.small-link-text
+{
+    font-size: 14px;
+    color: #3366BB;
+}
+
+#divider-text
+{
+    font-style: bold;
+    font-size: 19px;
+    color: #999999;
+}
+
+.signup-textfield
+{
+    font-family: "Arial";
+    font-size: 15px;
+    color: #000000;
+}
+
+#signup-button
+{
+    background-image: url(Images/Buttons/sign_in_button.png);
+    font-family: "Ed-Gothic";
+    font-size: 21px;
+    font-style: bold;
+    color: #FFFFFF;
+    background-repeat: no-repeat;
+}
+
+#signup-button:active
+{
+    background-image: url(Images/Buttons/blue_button.png);
+    background-repeat: no-repeat;
+}
+
+.provider-button-text
+{
+    font-size: 16px;
+    font-style: bold;
+    color: #003399;
+}
+
+.facebook-white-button
+{
+    background-image: url(Images/Buttons/facebook_white_button.png);
+    background-repeat: no-repeat;
+}
+
+.facebook-white-button:active
+{
+    background-image: url(Images/Buttons/facebook_white_button.png);
+    background-repeat: no-repeat;
+}
+
+.facebook-white-button-long
+{
+    background-image: url(Images/Buttons/facebook_white_button_long.png);
+    background-repeat: no-repeat;
+}
+
+.facebook-white-button-long:active
+{
+    background-image: url(Images/Buttons/facebook_white_button_long.png);
+    background-repeat: no-repeat;
+}
+
+.google-white-button
+{
+    background-image: url(Images/Buttons/google_white_button.png);
+    background-repeat: no-repeat;
+}
+
+.google-white-button:active
+{
+    background-image: url(Images/Buttons/google_white_button.png);
+    background-repeat: no-repeat;
+}
+
+.google-white-button-long
+{
+    background-image: url(Images/Buttons/google_white_button_long.png);
+    background-repeat: no-repeat;
+}
+
+.google-white-button-long:active
+{
+    background-image: url(Images/Buttons/google_white_button_long.png);
+    background-repeat: no-repeat;
+}
+
+.checkbox-button-on
+{
+    background-image: url(Images/Buttons/checked.png);
+    background-repeat: no-repeat;
+}
+
+.checkbox-button-off
+{
+    background-image: url(Images/Buttons/unchecked.png);
+    background-repeat: no-repeat;
+}

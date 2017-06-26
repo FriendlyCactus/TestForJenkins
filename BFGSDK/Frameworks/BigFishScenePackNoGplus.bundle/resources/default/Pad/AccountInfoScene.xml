@@ -1,0 +1,145 @@
+<scene>
+    <view size="{576,408}" layout="linear vertical" class="account-scene"> <!-- 550 represents maximum height, such as on longer phones -->
+        
+        <!-- Navigation Header -->
+		<view size="{100%,50}" id="header-view">
+			<label frame="{{12,0},{50%,100%}}" text="Edit your profile" id="header-text"/>
+			
+			<button frame="{{@-190,10},{83,30}}" title="Save" onTap="handleSave" class="white-button" id="save-button"/>
+			
+	        <button frame="{{@-49,1},{48,48}}" onTap="dismiss" backgroundImage="Images/Buttons/close_button" id="close-button"/>
+
+	        <button frame="{{@-95,10},{83,30}}" title="Cancel" onTap="handleCancel" class="white-button" id="cancel-button"/>
+
+		</view>
+
+		<!-- Scrollable Contents - Height padding taken care of by layout. Width padding using frame. -->
+		<view size="{100%,358}">
+		    <scrollview frame="{{0,0},{100%,100%}}" backgroundColor="white" id="scroll-content">
+		    
+		        <!-- Subheader -->
+				<view frame="{{0,0},{100%,72}}" id="subheader-view">
+				    <label frame="{{12,0},{@-24,100%}}" numberOfLines="3" lineBreakMode="word-wrap" text="Change your photo or display name." id="subheader-text" />
+			    </view>
+			    
+				<!-- Profile Picture -->
+				<view frame="{{0,72},{115,103}}">
+					<edit-profile-picture-widget id="profile-picture-widget" autoSave="NO">
+					    <view frame="{{18,18},{79,79}}">
+							<imageview size="{100%,100%}" image="Images/profile_icon" id="secondary-profile-picture-view"/>
+							<imageview size="{100%,100%}" image="Images/profile_icon" id="primary-profile-picture-view"/>
+							
+							<imageview frame="{{@-23,@-23},{19,19}}" image="Images/Buttons/add_picture_button" id="add-picture-image" hidden="YES"/>
+							<button size="{100%,100%}" onTap="changePicture" id="add-picture-button" hidden="YES"/>
+						</view>
+					</edit-profile-picture-widget>
+				</view>
+				
+				<!-- Labels and Connect Widgets-->
+				<!-- size for connect widgets-->
+                
+                <!-- Close this comment to re-add providers -->
+                <view frame="{{114,72},{@-114,240}}" layout="linear vertical 10" id="info-view">
+                <!-- Close this comment to re-add providers -->
+                <!-- Open this comment to show providers
+                <view frame="{{114,72},{@-114,252}}" layout="linear vertical 10" id="info-view">
+                Open this comment to show providers -->
+				    <!-- Labels-->
+				    <!-- Close this comment to re-add email -->
+                     <view size="{95%,54}" layout="linear vertical">
+						<label size="{100%,24}" text="Email" class="field-header"/>
+                        <view size="{100%,30}">
+                            <imageview size="{100%,100%}" image="Images/text_box"/>                       
+				            <textfield size="{100%,100%}" padding="0,5,0,0" placeholder="none" borderStyle="rounded-rect"
+                                class="field" id="email-label" autoresizingMask="width"
+                                keyboardType="email-address" autocapitalizationType="none" color="#a1a1a1"/>
+				    	</view>
+					</view>
+                    <!--Close this comment to re-add email -->
+					
+					<view size="{95%,78}" layout="linear vertical 2">
+						<label size="{100%,24}" text="Display name" class="field-header"/>
+                        <view size="{100%,30}">
+                            <imageview size="{100%,100%}" image="Images/text_box"/>                       
+				            <textfield size="{100%,100%}" padding="0,5,0,0" placeholder="4-16 characters"
+                                borderStyle="rounded-rect" class="field" id="display-name-label"
+                                autoresizingMask="width" autocapitalizationType="none"/>
+				        </view>				
+						<label size="{100%,18}" text="How your name will appear in-game" class="help-text"/>
+					</view>
+                    
+                    <!-- padding view to replace space used by email -->
+                    <!-- Close this comment to re-add email
+                    <view size="{95%,54}" />
+                    Close this comment to re-add email -->
+                    <!--
+					<view size="{95%,72}" layout="linear vertical">
+						<label size="{100%,24}" text="Birthday" class="field-header"/>
+			            <textfield size="{100%,30}" padding="0,5,0,0" placeholder="Optional" backgroundImage="Images/text_box" borderStyle="rounded-rect" class="field" id="birthday-label" autoresizingMask="width" autocapitalizationType="none"/>							
+						<label size="{100%,18}" text="MM/DD/YY Must be 13 or older to have a profile" class="help-text"/>
+					</view>
+                     -->
+
+					<!-- Connect Widgets -->
+					<label size="{100%,24}" text="Connect via" class="field-header"/>
+					
+                    <rave-connect-friends-widget id="facebook-connect-widget" connectedMessage="Thank you for connecting to Facebook. We are searching for friends who play our games and will add them to your gaming contact list" pluginKeyName="Facebook">
+                        <view size="{100%,48}" layout="center horizontal">
+                            <view size="{31,32}" id="toggle-icon">
+                                <imageview frame="{{0,0},{100%,100%}}" image="Images/fb_blue" id="icon-on"/>
+                                <imageview frame="{{0,0},{100%,100%}}" image="Images/fb_gray" id="icon-off"/>
+                            </view>
+                            <view size="{12,100%}"/>
+                            <label size="{@-120,100%}" text="Facebook" class="provider-name"/>
+                            <view size="{53,38}" id="toggle-button">
+                                <view size="{100%,100%}" id="connect-view-Facebook">
+                                    <button frame="{{0,0},{100%,100%}}" onTap="toggleFacebook" class="provider-button-off" id="switch-off"/>
+                                </view>
+                                <view size="{100%,100%}" id="disconnect-view-Facebook">
+                                    <button frame="{{0,0},{100%,100%}}" onTap="toggleFacebook" class="provider-button-on" id="switch-on"/>
+                                </view>
+                            </view>
+                        </view>
+                    </rave-connect-friends-widget>
+
+                    
+
+<!-- Close this comment to re-add providers
+                   	<game-center-widget id="game-center-widget">
+						<view size="{100%,48}" layout="center horizontal">
+						    <view size="{31,32}" id="toggle-icon">
+							    <imageview frame="{{0,0},{100%,100%}}" image="Images/Buttons/game_center_button" id="icon-on"/>
+							    <imageview frame="{{0,0},{100%,100%}}" image="Images/Buttons/game_center_button_disabled" id="icon-off"/>
+						    </view>
+						    <view size="{12,100%}"/>
+							<label size="{@-120,100%}" text="Game Center" class="provider-name"/>
+							<view size="{53,38}" id="toggle-button">
+                                <view size="{100%,100%}" id="connect-view-GameCenter">
+                                    <button frame="{{0,0},{100%,100%}}" onTap="toggleGameCenter" class="provider-button-off" id="switch-off"/>
+                                </view>
+                                <view size="{100%,100%}" id="disconnect-view-GameCenter">
+                                    <button frame="{{0,0},{100%,100%}}" onTap="toggleGameCenter" class="provider-button-on" id="switch-on"/>
+                                </view>
+							</view>
+						</view>
+					</game-center-widget>
+                     <view size="{@-114,38}" layout="center vertical">
+                        <view size="{300,100%}">
+                            <label frame="{{0,0},{300,36}}" onTap="handleSignOut" text="Not {user}? Sign out" textAlignment="center" textDecoration="underline" id="signout-button"/>
+                            <button frame="{{15,0},{270,100%}}" onTap="handleSignIn" title="Sign In to Big Fish" id="signin-button"/>
+                        </view>
+                    </view>
+ -->
+                    <!-- Close this comment to re-add providers -->
+				</view>
+			
+                <view frame="{{0,@-50},{100%,38}}" layout="center vertical">
+                    <view size="{100%,100%}">
+                        <label frame="{{0,0},{100%,100%}}" onTap="handleSignOut" text="Not {user}? Sign out" textAlignment="center" textDecoration="underline" id="signout-button"/>
+                    </view>
+                </view>
+			</scrollview>
+		</view>
+	
+	</view>
+</scene>

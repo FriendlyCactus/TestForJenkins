@@ -1,0 +1,5 @@
+<modal-window-widget>
+	<view size="fullscreen" layout="center" backgroundColor="#7F363636" autoresizingMask="width height" >
+        <view size="{576,384}" id="content-view" autoresizingMask="margin-left margin-right margin-top margin-bottom"/>
+	</view>
+</modal-window-widget>

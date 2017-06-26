@@ -1,0 +1,87 @@
+<scene>    
+    <view size="{576,384}" class="create-password-scene" autoresizingMask="width height" layout="center vertical" backgroundColor="white">
+
+    <view size="{100%,52}">
+        <imageview frame="{{0,0},{100%,100%}}" image="Images/blue_title"/>
+        <button frame="{{12,11},{38,29}}" onTap="handleBack" image="Images/Buttons/back_button" id="back-button"/>
+        <imageview frame="{{8,6},{38,38}}" image="Images/fish_icon" id="scene-icon" hidden="true"/>
+        <label frame="{{61,13},{@-129,26}}" text="Create a Big Fish Account" textColor="white" font="Ed-Gothic 21" textAlignment="left"/>
+        <button frame="{{@-49,1},{48,48}}" onTap="dismiss" backgroundImage="Images/Buttons/close_button"/>
+    </view>
+
+    <view size="{@-50,100%}" layout="center vertical">
+        <view size="{100%,68}">
+            <view frame="{{0,0},{100%,70}}" id="signup-email-warning" hidden="true">
+                <imageview frame="{{0,2},{30,30}}" image="Images/caution"/>
+                <label frame="{{33,0},{100%,34}}" text="Email" class="header-warning-text" />
+                <imageview frame="{{0,34},{@-5,36}}" image="Images/text_box_error"/>
+            </view>
+            <label frame="{{0,0},{100%,34}}" text="Email" class="header-text" id="signup-email-label"/>
+            <imageview frame="{{0,34},{@-5,36}}" image="Images/text_box" id="signup-email-bg"/>
+            <textfield frame="{{7,34},{@-12,36}}" placeholder="Email address (e.g. joe@aol.com)" borderStyle='none' class="signup-textfield" id="signup-email-field" autoresizingMask="width" keyboardType="email-address" autocapitalizationType="none" />
+        </view>
+
+        <view size="{100%,68}">
+            <view frame="{{0,0},{100%,70}}" id="signup-password-warning" hidden="true">
+                <imageview frame="{{0,2},{30,30}}" image="Images/caution"/>
+                <label frame="{{33,0},{100%,34}}" text="Password" class="header-warning-text" />
+                <imageview frame="{{0,34},{@-5,36}}" image="Images/text_box_error"/>
+            </view>
+            <label frame="{{0,0},{100%,34}}" text="Password" class="header-text" id="signup-password-label"/>
+            <imageview frame="{{0,34},{@-5,36}}" image="Images/text_box" id="signup-password-bg"/>
+            <textfield frame="{{7,34},{@-12,36}}" placeholder="Password (5-12 characters)" borderStyle='none' class="signup-textfield" id="signup-password-field" autoresizingMask="width" autocapitalizationType="none" secureTextEntry="true"/>
+        </view>
+        
+        <view size="{100%, 191">
+            <!-- Normal appearance -->
+            <view frame="{{0,0},{100%, 100%}}" layout="center vertical" id="normal-appearance" hidden="false">
+                <view size="{100%, 15}" />
+                
+                <button size="{180,36}" id="signup-button" title="Create Account" onTap="continueSignUp" backgroundImage="Images/Buttons/blue_button.png"/>
+
+                <htmllabel size="{100%,60}" onTap="handleSignIn" numberOfLines="2" lineBreakMode="word-wrap" text="RSAlreadyHaveAccount" textAlignment="center" id="signin-button"/>
+
+                <htmllabel size="{100%,80}" numberOfLines="3" lineBreakMode="word-wrap" text="RSPrivacyCreateAccount" textAlignment="center" class="caption-text" id="privacy-statement"/>
+            </view>
+            <!-- Coppa appearance -->
+            <view frame="{{0,0},{100%, 100%}}" layout="center vertical" id="coppa-appearance" hidden="true">
+                <view size="{100%, 6}" />
+                
+                <view size="{100%, 59}" layout="center horizontal">
+                    <label size="{53%, 30}" text="Select your birth year" textAlignment="right" class="header-text"/>
+                    <view size="{5%,30}" />
+                    <view size="{85,43}">
+                        <imageview frame="{{0,0},{85,43}}" image="Images/small_frame"/>
+                        <label frame="{{6,0},{@-13,43}}" text="2015" class="signup-textfield"
+                            onTap="selectBirthYear" textAlignment="center" id="signup-birthday-label" autoresizingMask="width" />
+                    </view>
+                </view>
+                
+                <button size="{180,36}" id="signup-button" title="Create Account" onTap="continueSignUp" backgroundImage="Images/Buttons/blue_button.png"/>
+                
+                <htmllabel size="{100%,50}" onTap="handleSignIn" numberOfLines="2" lineBreakMode="word-wrap" text="RSAlreadyHaveAccount" textAlignment="center" id="signin-button"/>
+                
+                <htmllabel size="{100%,40}" numberOfLines="3" lineBreakMode="word-wrap" text="RSPrivacyCreateAccount" textAlignment="center" class="caption-text" id="privacy-statement"/>
+            </view>
+            <!-- Newsletter appearance -->
+            <view frame="{{0,0},{100%, 100%}}" layout="center vertical" id="newsletter-appearance" hidden="true">
+                <view size="{100%, 50}" layout="center horizontal 5">
+                    
+                    <view size="{30,30}">
+                        <imageview size="{30, 30}" image="Images/Buttons/unchecked.png" id="newsletter-checkbox-off" onTap="toggleNewsletter"/>
+                        <imageview size="{30, 30}" image="Images/Buttons/checked.png" id="newsletter-checkbox-on" onTap="toggleNewsletter" hidden="true"/>
+                    </view>
+                    <label size="{@-40, 50}" text="RSNewsletterOffer" class="header-text" numberOfLines="2" lineBreakMode="word-wrap"/>
+                </view>
+                
+                <button size="{180,36}" id="signup-button" title="Create Account" onTap="continueSignUp" backgroundImage="Images/Buttons/blue_button.png"/>
+                
+                <htmllabel size="{100%,50}" onTap="handleSignIn" numberOfLines="2" lineBreakMode="word-wrap" text="RSAlreadyHaveAccount" textAlignment="center" id="signin-button"/>
+
+                <htmllabel size="{100%,50}" numberOfLines="3" lineBreakMode="word-wrap" text="RSPrivacyCreateAccount" textAlignment="center" class="caption-text" id="privacy-statement"/>
+            </view>
+        </view>
+    </view>
+
+    </view>
+</scene>

@@ -1,0 +1,80 @@
+<scene>
+    <view size="fullscreen">
+	<view frame="{{15,15},{@-30,@-30}}" layout="center vertical" backgroundColor="#FFFFFFFF">
+
+    <view size="{100%,43}">
+        <imageview frame="{{0,0},{100%,100%}}" image="Images/blue_title"/>
+        <button frame="{{10,9},{32,24}}" onTap="handleBack" image="Images/Buttons/back_button" id="back-button" hidden="true"/>
+        <imageview frame="{{7,5},{32,32}}" image="Images/fish_icon" id="scene-icon"/>
+        <label frame="{{51,11},{@-42,22}}" id="header-text" text="Sign in to your Big Fish account" textAlignment="left"/> 
+        <button frame="{{@-41,1},{40,40}}" onTap="dismiss" backgroundImage="Images/Buttons/close_button" id="close-button"/>
+    </view>
+
+    <view size="{@-50,100%}" layout="center vertical">
+
+        <view size="{100%,15}" /> <!-- Spacer -->
+
+        <view size="{100%,55}">
+            <view frame="{{0,0},{100%,55}}" id="login-email-warning" hidden="true">
+                <imageview frame="{{0,2},{20,20}}" image="Images/caution" />
+                <label frame="{{23,0},{100%,25}}" text="Email" class="header-warning-text" />
+                 <imageview frame="{{0,25},{@-5,30}}" image="Images/text_box_error"/>
+            </view>
+            <label frame="{{0,0},{100%,25}}" text="Email" class="subheader-text" id="login-email-label"/>
+            <imageview frame="{{0,25},{@-5,30}}" image="Images/text_box" id="login-email-bg"/>
+            <textfield frame="{{6,25},{@-12,30}}" placeholder="Email address (e.g. joe@aol.com)" borderStyle='none' class="signup-textfield" id="login-email-field" autoresizingMask="width" keyboardType="email-address" autocapitalizationType="none"/>
+        </view>
+
+        <view size="{100%,55}">
+            <view frame="{{0,0},{100%,55}}" id="login-password-warning" hidden="true">
+                <imageview frame="{{0,2},{20,20}}" image="Images/caution" />
+                <label frame="{{23,0},{100%,25}}" text="Password" class="header-warning-text" />
+                <imageview frame="{{0,25},{@-5,30}}" image="Images/text_box_error"/>
+            </view>
+            <label frame="{{0,0},{100%,25}}" text="Password" class="subheader-text" id="login-password-label"/>
+            <htmllabel frame="{{@-166,0},{160,25}}" numberOfLines="0" text="RSForgotPassword" class="small-link-text" textAlignment="right" id="forgot-password-label" onTap="handleForgot"/>
+            <imageview frame="{{0,25},{@-5,30}}" image="Images/text_box" id="login-password-bg"/>
+            <textfield frame="{{6,25},{@-12,30}}" placeholder="Password (5-12 characters)" borderStyle='none' class="signup-textfield" id="login-password-field" autoresizingMask="width" autocapitalizationType="none" secureTextEntry="true"/>
+        </view>
+
+        <view size="{100%,15}" /> <!-- Spacer -->
+        
+        <button size="{150,30}" title="Sign in" onTap="loginWithEmail" id="signup-button"/>
+        
+        <view size="{100%,5}" /> <!-- Spacer -->
+        
+        <htmllabel size="{100%,48}" numberOfLines="2" lineBreakMode="word-wrap" text="RSCreateAccount" class="link-text" textAlignment="center" id="create-account-label" onTap="signUp"/>
+        
+        <!-- Spacer -->
+        <view size="{100%,20}" />
+
+        <view size="{100%,20}" layout="center horizontal">
+            <imageview size="{40%,1}" image="Images/divider_line"/>
+            <label size="{20%,20}" text="OR" id="divider-text" textAlignment="center"/> 
+            <imageview size="{40%,1}" image="Images/divider_line"/>
+        </view>
+
+        <view size="{100%,132}" layout="center vertical 10" hidden="false">
+            
+            <sign-in-with-facebook-widget id="sign-in-with-facebook-widget">
+                <view size="{100%,36}">
+                	<button id="facebook-white-button" class="facebook-white-button-long" frame="{{0,0},{100%,100%}}" onTap="signInWithFacebook"/>
+                	<label frame="{{40,0},{@-40,100%}}" text="Sign in with Facebook" textAlignment="left" class="provider-button-text"/>
+                </view> 
+            </sign-in-with-facebook-widget>
+            
+            <!-- Close this comment to show providers
+            <sign-in-with-gplus-widget id="sign-in-with-gplus-widget">
+                <view size="{100%,36}">
+	                <button id="google-white-button" class="google-white-button-long" size="{100%,36}" onTap="signInWithGooglePlus"/>
+	                <label frame="{{40,0},{@-40,100%}}" text="Sign in with Google+" textAlignment="left" class="provider-button-text"/>
+                </view>
+            </sign-in-with-gplus-widget>
+             Close this comment to show providers -->
+            
+        </view>
+    </view>
+    
+    </view>
+    </view>
+</scene>
