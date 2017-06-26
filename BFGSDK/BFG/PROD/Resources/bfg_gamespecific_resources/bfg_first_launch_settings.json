@@ -1,0 +1,35 @@
+{
+    "hbi" : "495b0dd137f7ec95256af31c5c9f4dd92c795d2b",
+    "hasoffers": {
+        "start_datetime": "2015-01-01 00:00:00 PST"
+    },
+    "kontagent": {
+        "api_key1":"1239d7495d294d61bdd87627c21c9c36",
+        "api_key2":"",
+        "start_datetime":"2013-01-01 00:00:00 PST"
+    },
+    "playhaven": {
+        "start_datetime": "2015-01-01 00:00:00 PST"
+    },
+    "kochava": {
+        "app_id": "kobake-shop-blast-u2devy",
+        "start_datetime": "2015-01-01 00:00:00 PST"
+    },
+    "rave" : {
+        "RaveSettings.General.ApplicationID" : "428ec105abd04fc795d8e13cfd81888a"
+    },
+    "game_service_identifier":"",
+    "forum_identifier": "",
+    "forum_tracking_url": "",
+    "mts_serverdomain":"https://mobile.bigfishgames.com",
+    "bfg_gdn":"https://gdn.bigfishgames.com",
+    "dashboard_timeout":3600,
+    "dashboard_active":0,
+    "dashboard_show_after_this_many_runs":1000000,
+    "ratings_prompt" : "0",
+    "placementDebugMode" : false,
+    "purchaseDebugMode" : false,
+    "app_store_id":"1201364068"
+}
+
+
